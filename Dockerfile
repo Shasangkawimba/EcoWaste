@@ -1,16 +1,16 @@
-FROM php:8.2-apache
-
-# Fix Apache MPM conflict:
-# mod_php requires mpm_prefork. Disable mpm_event and mpm_worker first,
-# then explicitly enable mpm_prefork to avoid "More than one MPM loaded" error.
-RUN a2dismod mpm_event mpm_worker || true && \
-    a2enmod mpm_prefork
+FROM php:8.2-cli
 
 # Install mysqli extension for MySQL/Aiven.io connection
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
-# Copy application files to Apache web root
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy application files
 COPY . /var/www/html/
 
 # Expose port 80
 EXPOSE 80
+
+# Start PHP built-in web server (no Apache = no MPM conflict)
+CMD ["php", "-S", "0.0.0.0:80", "-t", "/var/www/html"]
