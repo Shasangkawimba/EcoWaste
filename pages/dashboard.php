@@ -29,7 +29,7 @@ $jumlahPoin = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(total_poin) AS 
     <div class="col-md-4">
         <div class="card-custom text-center">
             <h5 class="fw-bold">Poin Beredar</h5>
-            <p class="display-6 text-warning"><?= $jumlahPoin ? $jumlahPoin : 0 ?></p>
+            <p class="display-6 text-warning"><?= $jumlahPoin ? number_format($jumlahPoin, 0) : 0 ?></p>
         </div>
     </div>
 

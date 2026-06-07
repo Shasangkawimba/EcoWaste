@@ -57,7 +57,7 @@ include __DIR__ . '/../koneksi.php';
                     <td><?= $row['nama_warga'] ?></td>
                     <td><?= $row['nama_petugas'] ?></td>
                     <td><?= $row['nama_hadiah'] ?></td>
-                    <td><?= $row['poin_digunakan'] ?></td>
+                    <td><?= number_format($row['poin_digunakan'], 0) ?></td>
                     <td>
                         <?php if ($row['status'] == 'Selesai'): ?>
                             <span class="badge bg-success">Selesai</span>

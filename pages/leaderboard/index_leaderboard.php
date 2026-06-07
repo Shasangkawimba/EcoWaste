@@ -34,7 +34,7 @@ $p3 = $ranking[2] ?? null;
                 <div class="card-body text-center">
                     <h5 class="fw-bold">Juara 1</h5>
                     <h3 class="fw-bold"><?= $p1['nama_warga'] ?? '-' ?></h3>
-                    <p class="text-muted">Poin: <?= $p1['total_poin'] ?? 0 ?></p>
+                    <p class="text-muted">Poin: <?= number_format($p1['total_poin'] ?? 0, 0) ?></p>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@ $p3 = $ranking[2] ?? null;
                 <div class="card-body text-center">
                     <h5 class="fw-bold">Juara 2</h5>
                     <h3 class="fw-bold"><?= $p2['nama_warga'] ?? '-' ?></h3>
-                    <p class="text-muted">Poin: <?= $p2['total_poin'] ?? 0 ?></p>
+                    <p class="text-muted">Poin: <?= number_format($p2['total_poin'] ?? 0, 0) ?></p>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@ $p3 = $ranking[2] ?? null;
                 <div class="card-body text-center">
                     <h5 class="fw-bold">Juara 3</h5>
                     <h3 class="fw-bold"><?= $p3['nama_warga'] ?? '-' ?></h3>
-                    <p class="text-muted">Poin: <?= $p3['total_poin'] ?? 0 ?></p>
+                    <p class="text-muted">Poin: <?= number_format($p3['total_poin'] ?? 0, 0) ?></p>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@ $p3 = $ranking[2] ?? null;
                 <tr>
                     <td><?= $rank++ ?></td>
                     <td><?= $r['nama_warga'] ?></td>
-                    <td><?= $r['total_poin'] ?></td>
+                    <td><?= number_format($r['total_poin'], 0) ?></td>
                 </tr>
                 <?php endforeach; ?>
 

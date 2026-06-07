@@ -1,6 +1,7 @@
 <?php
 $request_uri = $_SERVER['REQUEST_URI'] ?? '';
 $base_url = (strpos($request_uri, '/ProjectAkhir') === 0) ? '/ProjectAkhir' : '';
+$current_page = $_SERVER['SCRIPT_NAME'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -33,39 +34,39 @@ $base_url = (strpos($request_uri, '/ProjectAkhir') === 0) ? '/ProjectAkhir' : ''
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-eco-links">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $base_url ?>/pages/dashboard.php">Dashboard</a>
+                    <a class="nav-link <?= (strpos($current_page, 'dashboard.php') !== false) ? 'active' : '' ?>" href="<?= $base_url ?>/pages/dashboard.php">Dashboard</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $base_url ?>/pages/warga/index_warga.php">Warga</a>
+                    <a class="nav-link <?= (strpos($current_page, '/warga/') !== false) ? 'active' : '' ?>" href="<?= $base_url ?>/pages/warga/index_warga.php">Warga</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $base_url ?>/pages/petugas/index_petugas.php">Petugas</a>
+                    <a class="nav-link <?= (strpos($current_page, '/petugas/') !== false) ? 'active' : '' ?>" href="<?= $base_url ?>/pages/petugas/index_petugas.php">Petugas</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $base_url ?>/pages/sampah/index_sampah.php">Sampah</a>
+                    <a class="nav-link <?= (strpos($current_page, '/sampah/') !== false) ? 'active' : '' ?>" href="<?= $base_url ?>/pages/sampah/index_sampah.php">Sampah</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $base_url ?>/pages/setor/index_setor.php">Transaksi Setor</a>
+                    <a class="nav-link <?= (strpos($current_page, '/setor/') !== false) ? 'active' : '' ?>" href="<?= $base_url ?>/pages/setor/index_setor.php">Transaksi Setor</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $base_url ?>/pages/penukaran/index_penukaran.php">Penukaran</a>
+                    <a class="nav-link <?= (strpos($current_page, '/penukaran/') !== false) ? 'active' : '' ?>" href="<?= $base_url ?>/pages/penukaran/index_penukaran.php">Penukaran</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $base_url ?>/pages/hadiah/index_hadiah.php">Hadiah</a>
+                    <a class="nav-link <?= (strpos($current_page, '/hadiah/') !== false) ? 'active' : '' ?>" href="<?= $base_url ?>/pages/hadiah/index_hadiah.php">Hadiah</a>
                 </li>
 
                 <li class="nav-item">
-                     <a class="nav-link" href="<?= $base_url ?>/pages/leaderboard/index_leaderboard.php">Leaderboard</a>
+                     <a class="nav-link <?= (strpos($current_page, '/leaderboard/') !== false) ? 'active' : '' ?>" href="<?= $base_url ?>/pages/leaderboard/index_leaderboard.php">Leaderboard</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $base_url ?>/pages/laporan/index_laporan.php">Laporan</a>
+                    <a class="nav-link <?= (strpos($current_page, '/laporan/') !== false) ? 'active' : '' ?>" href="<?= $base_url ?>/pages/laporan/index_laporan.php">Laporan</a>
                 </li>
 
             </ul>

@@ -35,7 +35,7 @@ $detail = mysqli_query($conn, "
         <p><strong>Warga:</strong> <?= $trans['nama_warga'] ?></p>
         <p><strong>Petugas:</strong> <?= $trans['nama_petugas'] ?></p>
         <p><strong>Tanggal:</strong> <?= $trans['tgl_transaksi'] ?></p>
-        <p><strong>Total Poin:</strong> <?= $trans['total_poin'] ?></p>
+        <p><strong>Total Poin:</strong> <?= number_format($trans['total_poin'], 0) ?></p>
 
         <hr>
 
@@ -56,7 +56,7 @@ $detail = mysqli_query($conn, "
                     <td><?= $d['nama_sampah'] ?></td>
                     <td><?= $d['kategori'] ?></td>
                     <td><?= $d['berat'] ?></td>
-                    <td><?= $d['poin_diperoleh'] ?></td>
+                    <td><?= number_format($d['poin_diperoleh'], 0) ?></td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>

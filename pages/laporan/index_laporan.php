@@ -55,7 +55,7 @@ $sampah_terbanyak = mysqli_fetch_assoc($q_sampah_terbanyak);
     <div class="col-md-3">
         <div class="card-custom text-center mb-0 h-100">
             <h5 class="fw-bold mb-2">Rata Rata Poin</h5>
-            <p class="h3 text-success mb-0"><?= number_format($avg_poin, 2) ?> poin</p>
+            <p class="h3 text-success mb-0"><?= number_format($avg_poin, 0) ?> poin</p>
         </div>
     </div>
     <div class="col-md-3">

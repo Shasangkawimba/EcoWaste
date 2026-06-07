@@ -37,7 +37,7 @@ if (!$data) {
             <div class="col-md-12">
                 <label class="form-label">Poin Per Kg</label>
                 <input type="number" name="harga_perkg" class="form-control"
-                value="<?= $data['harga_perkg'] ?>" required>
+                value="<?= (int)$data['harga_perkg'] ?>" required>
             </div>
 
             <div class="col-12 text-end">

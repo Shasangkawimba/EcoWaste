@@ -40,7 +40,7 @@ if (isset($_POST['update'])) {
             <p><strong>Warga:</strong> <?= $data['nama_warga'] ?></p>
             <p><strong>Petugas:</strong> <?= $data['nama_petugas'] ?></p>
             <p><strong>Hadiah:</strong> <?= $data['nama_hadiah'] ?></p>
-            <p><strong>Poin Digunakan:</strong> <?= $data['poin_digunakan'] ?></p>
+            <p><strong>Poin Digunakan:</strong> <?= number_format($data['poin_digunakan'], 0) ?></p>
             <p><strong>Tanggal Penukaran:</strong> <?= $data['tgl_penukaran'] ?></p>
 
             <div class="mb-3">

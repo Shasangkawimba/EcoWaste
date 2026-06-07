@@ -42,7 +42,7 @@ include __DIR__ . '/../koneksi.php';
                     <td><?= $row['nama_warga'] ?></td>
                     <td><?= $row['nama_petugas'] ?></td>
                     <td><?= $row['tgl_transaksi'] ?></td>
-                    <td><?= $row['total_poin'] ?></td>
+                    <td><?= number_format($row['total_poin'], 0) ?></td>
                     <td>
                         <a href="update_setor.php?id_transaksi=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-success">Detail</a>
                         <a href="delete_setor.php?id_transaksi=<?= $row['id_transaksi'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Hapus transaksi ini?')">Hapus</a>

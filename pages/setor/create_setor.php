@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
                             $s = mysqli_query($conn, "SELECT * FROM sampah ORDER BY nama_sampah");
                             while ($row = mysqli_fetch_assoc($s)):
                             ?>
-                            <option value="<?= $row['id_sampah'] ?>"><?= $row['nama_sampah'] ?> (<?= $row['harga_perkg'] ?> poin/kg)</option>
+                            <option value="<?= $row['id_sampah'] ?>"><?= $row['nama_sampah'] ?> (<?= number_format($row['harga_perkg'], 0) ?> poin/kg)</option>
                             <?php endwhile; ?>
                         </select>
                     </div>
