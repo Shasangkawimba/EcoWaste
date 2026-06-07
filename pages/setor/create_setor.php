@@ -21,8 +21,8 @@ if (isset($_POST['submit'])) {
         $berat = $_POST['berat'][$i];
 
         // ambil harga per kg
-        $s = mysqli_fetch_assoc(mysqli_query($conn, "SELECT harga_perkg FROM sampah WHERE id_sampah = $id_sampah"));
-        $poin = $s['harga_perkg'] * $berat;
+        $s = mysqli_fetch_assoc(mysqli_query($conn, "SELECT poin_per_kg FROM sampah WHERE id_sampah = $id_sampah"));
+        $poin = $s['poin_per_kg'] * $berat;
 
         $totalPoin += $poin;
 
@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
                             $s = mysqli_query($conn, "SELECT * FROM sampah ORDER BY nama_sampah");
                             while ($row = mysqli_fetch_assoc($s)):
                             ?>
-                            <option value="<?= $row['id_sampah'] ?>"><?= $row['nama_sampah'] ?> (<?= number_format($row['harga_perkg'], 0) ?> poin/kg)</option>
+                            <option value="<?= $row['id_sampah'] ?>"><?= $row['nama_sampah'] ?> (<?= number_format($row['poin_per_kg'], 0) ?> poin/kg)</option>
                             <?php endwhile; ?>
                         </select>
                     </div>
