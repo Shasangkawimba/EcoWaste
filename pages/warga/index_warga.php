@@ -2,7 +2,11 @@
 include '../../layout/layout.php';
 include '../../pages/koneksi.php';
 
-$result = mysqli_query($conn, "SELECT * FROM warga");
+$result = mysqli_query($conn, "
+    SELECT w.*, IFNULL(p.total_poin, 0) AS total_poin 
+    FROM warga w 
+    LEFT JOIN poin p ON w.id_warga = p.id_warga
+");
 ?>
 
 <h2 class="fw-bold mb-4">Daftar Warga</h2>
@@ -19,6 +23,7 @@ $result = mysqli_query($conn, "SELECT * FROM warga");
                 <th>Nama</th>
                 <th>Alamat</th>
                 <th>No HP</th>
+                <th>Total Poin</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -26,9 +31,10 @@ $result = mysqli_query($conn, "SELECT * FROM warga");
         <tbody>
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-                <td><?= $row['nama_warga'] ?></td>
-                <td><?= $row['alamat'] ?></td>
-                <td><?= $row['no_hp'] ?></td>
+                <td><?= htmlspecialchars($row['nama_warga']) ?></td>
+                <td><?= htmlspecialchars($row['alamat']) ?></td>
+                <td><?= htmlspecialchars($row['no_hp']) ?></td>
+                <td><?= number_format($row['total_poin'], 0) ?></td>
                 <td>
                     <a href="update_warga.php?id_warga=<?= $row['id_warga'] ?>" class="btn btn-sm btn-success">Edit</a>
                     <a href="delete_warga.php?id_warga=<?= $row['id_warga'] ?>" class="btn btn-sm btn-danger">Hapus</a>
