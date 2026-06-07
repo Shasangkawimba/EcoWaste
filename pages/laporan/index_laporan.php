@@ -36,46 +36,41 @@ $sampah_terbanyak = mysqli_fetch_assoc($q_sampah_terbanyak);
 
 ?>
 
-<div class="page-container">
+<h2 class="fw-bold mb-2">Laporan EcoWaste</h2>
+<p class="text-muted mb-4">Ringkasan aktivitas pengelolaan sampah dan poin warga</p>
 
-    <div class="header-section">
-        <h2>Laporan EcoWaste</h2>
-        <p class="subtitle">Ringkasan aktivitas pengelolaan sampah dan poin warga</p>
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="card-custom text-center mb-0 h-100">
+            <h5 class="fw-bold mb-2">Total Berat Sampah</h5>
+            <p class="h3 text-success mb-0"><?= number_format($total_berat, 2) ?> kg</p>
+        </div>
     </div>
-
-    <div class="stats-grid">
-
-        <div class="stat-card">
-            <h4>Total Berat Sampah</h4>
-            <p class="stat-value"><?= number_format($total_berat, 2) ?> kg</p>
+    <div class="col-md-3">
+        <div class="card-custom text-center mb-0 h-100">
+            <h5 class="fw-bold mb-2">Total Poin Warga</h5>
+            <p class="h3 text-primary mb-0"><?= number_format($total_poin) ?> poin</p>
         </div>
-
-        <div class="stat-card">
-            <h4>Total Poin Warga</h4>
-            <p class="stat-value"><?= number_format($total_poin) ?> poin</p>
+    </div>
+    <div class="col-md-3">
+        <div class="card-custom text-center mb-0 h-100">
+            <h5 class="fw-bold mb-2">Rata Rata Poin</h5>
+            <p class="h3 text-success mb-0"><?= number_format($avg_poin, 2) ?> poin</p>
         </div>
-
-        <div class="stat-card">
-            <h4>Rata Rata Poin</h4>
-            <p class="stat-value"><?= number_format($avg_poin, 2) ?> poin</p>
-        </div>
-
-        <div class="stat-card">
-            <h4>Sampah Terbanyak</h4>
-            <p class="stat-value">
-                <?= $sampah_terbanyak ? $sampah_terbanyak['nama_sampah'] : 'Tidak ada data' ?>
+    </div>
+    <div class="col-md-3">
+        <div class="card-custom text-center mb-0 h-100">
+            <h5 class="fw-bold mb-2">Sampah Terbanyak</h5>
+            <p class="h3 text-warning mb-0">
+                <?= $sampah_terbanyak ? htmlspecialchars($sampah_terbanyak['nama_sampah']) : 'Tidak ada data' ?>
             </p>
         </div>
-
     </div>
+</div>
 
-    <hr>
-
-    <div class="chart-section">
-        <h3>Grafik Berat Sampah per Tanggal Setor</h3>
-        <canvas id="chartBerat"></canvas>
-    </div>
-
+<div class="card-custom">
+    <h3 class="mb-4">Grafik Berat Sampah per Tanggal Setor</h3>
+    <canvas id="chartBerat" style="max-height: 400px;"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -106,48 +101,70 @@ new Chart(ctx, {
         datasets: [{
             label: 'Kg Sampah',
             data: <?= json_encode($values) ?>,
-            borderWidth: 2,
-            tension: 0.3
+            borderColor: '#73d3eb',
+            backgroundColor: 'rgba(115, 211, 235, 0.15)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.4,
+            pointBackgroundColor: '#122315',
+            pointBorderColor: '#73d3eb',
+            pointHoverBackgroundColor: '#55dd4a',
+            pointHoverBorderColor: '#122315',
+            pointRadius: 5,
+            pointHoverRadius: 7
         }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        family: "'Inter', sans-serif",
+                        size: 13,
+                        weight: 500
+                    },
+                    color: '#122315'
+                }
+            },
+            tooltip: {
+                backgroundColor: '#122315',
+                titleColor: '#f3ede4',
+                bodyColor: '#f3ede4',
+                bodyFont: {
+                    family: "'Inter', sans-serif"
+                },
+                titleFont: {
+                    family: "'Inter', sans-serif",
+                    weight: 'bold'
+                }
+            }
+        },
+        scales: {
+            x: {
+                grid: {
+                    color: '#e5e7eb'
+                },
+                ticks: {
+                    font: {
+                        family: "'Inter', sans-serif"
+                    },
+                    color: '#333333'
+                }
+            },
+            y: {
+                grid: {
+                    color: '#e5e7eb'
+                },
+                ticks: {
+                    font: {
+                        family: "'Inter', sans-serif"
+                    },
+                    color: '#333333'
+                }
+            }
+        }
     }
 });
 </script>
-
-<style>
-.page-container {
-    padding: 20px;
-}
-.header-section h2 {
-    font-weight: 700;
-    color: #1B6B3A;
-}
-.subtitle {
-    font-size: 14px;
-    opacity: .7;
-    margin-top: -5px;
-}
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    margin: 25px 0;
-}
-.stat-card {
-    background: white;
-    padding: 18px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border-left: 6px solid #1B6B3A;
-}
-.stat-value {
-    font-size: 22px;
-    font-weight: 600;
-    margin-top: 6px;
-}
-.chart-section {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-</style>
+<?php include __DIR__ . '/../../layout/footer.php'; ?>

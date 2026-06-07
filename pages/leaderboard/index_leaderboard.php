@@ -30,9 +30,9 @@ $p3 = $ranking[2] ?? null;
 
         <!-- Posisi 1 -->
         <div class="col-md-4">
-            <div class="card shadow-sm border-success border-2">
+            <div class="card card-custom leaderboard-card-1">
                 <div class="card-body text-center">
-                    <h5 class="text-success fw-bold">Juara 1</h5>
+                    <h5 class="fw-bold">Juara 1</h5>
                     <h3 class="fw-bold"><?= $p1['nama_warga'] ?? '-' ?></h3>
                     <p class="text-muted">Poin: <?= $p1['total_poin'] ?? 0 ?></p>
                 </div>
@@ -41,9 +41,9 @@ $p3 = $ranking[2] ?? null;
 
         <!-- Posisi 2 -->
         <div class="col-md-4">
-            <div class="card shadow-sm border-warning border-2">
+            <div class="card card-custom leaderboard-card-2">
                 <div class="card-body text-center">
-                    <h5 class="text-warning fw-bold">Juara 2</h5>
+                    <h5 class="fw-bold">Juara 2</h5>
                     <h3 class="fw-bold"><?= $p2['nama_warga'] ?? '-' ?></h3>
                     <p class="text-muted">Poin: <?= $p2['total_poin'] ?? 0 ?></p>
                 </div>
@@ -52,9 +52,9 @@ $p3 = $ranking[2] ?? null;
 
         <!-- Posisi 3 -->
         <div class="col-md-4">
-            <div class="card shadow-sm border-info border-2">
+            <div class="card card-custom leaderboard-card-3">
                 <div class="card-body text-center">
-                    <h5 class="text-info fw-bold">Juara 3</h5>
+                    <h5 class="fw-bold">Juara 3</h5>
                     <h3 class="fw-bold"><?= $p3['nama_warga'] ?? '-' ?></h3>
                     <p class="text-muted">Poin: <?= $p3['total_poin'] ?? 0 ?></p>
                 </div>

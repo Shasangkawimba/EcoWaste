@@ -1,51 +1,457 @@
-/* GLOBAL */
+/* ==========================================================================
+   DESIGN SYSTEM - KIKIN (VINTAGE PARK POSTER THEME)
+   ========================================================================== */
+
+:root {
+    /* Color Palette */
+    --color-forest-ink: #122315;        /* Hero canvas, primary headings, nav bar, footer */
+    --color-meadow: #55dd4a;            /* Primary action fill, accent words, tags (grass-green) */
+    --color-sage-border: #566053;       /* Muted green-gray for dividers and secondary borders */
+    --color-lichen: #77e46e;            /* Outlined borders, secondary indicators */
+    --color-paper-cream: #f3ede4;       /* Warm paper canvas, replaces typical white background */
+    --color-charcoal: #333333;          /* Paragraph body text, general boundaries */
+    --color-slate: #141414;             /* Dark UI accents, icons */
+    --color-frost: #e5e7eb;             /* Soft secondary dividers */
+    --color-moss-gray: #999c91;         /* Low-emphasis captions, helper text */
+    --color-driftwood: #626d66;         /* Separators for elevated dark surfaces */
+    --color-white: #faf8f5;             /* Primary card backgrounds (warm cream, not pure white) */
+
+    /* Typography Scales */
+    --font-deacon: 'Bebas Neue', sans-serif;
+    --font-graphik: 'Inter', sans-serif;
+
+    /* Spacing Scales */
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-16: 16px;
+    --spacing-20: 20px;
+    --spacing-24: 24px;
+    --spacing-32: 32px;
+    --spacing-40: 40px;
+    --spacing-48: 48px;
+    --spacing-64: 64px;
+    --spacing-80: 80px;
+    --spacing-100: 100px;
+}
+
+/* Global Styles */
 body {
-    background: #f3f7f3;
-    font-family: "Segoe UI", sans-serif;
+    background-color: var(--color-paper-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-graphik);
+    font-size: 16px;
+    line-height: 1.43;
+    letter-spacing: -0.16px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* BRANDING */
+/* Kikin Display Headings (Large) */
+h1, h2, .font-deacon {
+    font-family: var(--font-deacon);
+    color: var(--color-forest-ink);
+    text-transform: uppercase;
+    margin: 0 0 var(--spacing-16) 0;
+    line-height: 0.85;
+    letter-spacing: -1.2px;
+}
+
+h2 {
+    font-size: 58px;
+    letter-spacing: -1.51px;
+    color: var(--color-forest-ink);
+    margin-bottom: var(--spacing-24);
+}
+
+/* UI / Secondary Headings (Clean Graphik) */
+h3, h4, h5, h6, .font-graphik {
+    font-family: var(--font-graphik);
+    color: var(--color-forest-ink);
+    margin: 0 0 var(--spacing-16) 0;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 32px;
+    letter-spacing: -0.83px;
+}
+
+h4 {
+    font-size: 24px;
+    letter-spacing: -0.96px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Brand logo as a Kikin-style Display badge */
 .brand-eco {
-    font-size: 26px;
-    font-weight: 800;
-    color: #0f8d4c !important;
-    letter-spacing: -0.5px;
+    font-family: var(--font-deacon);
+    font-size: 32px;
+    letter-spacing: 0.5px;
+    color: var(--color-meadow) !important; /* Meadow green brand highlight */
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.2s ease;
 }
 
-/* TOP NAV */
+.brand-eco:hover {
+    transform: scale(1.03);
+}
+
+/* Top Navigation Bar - Forest Ink Background */
 .topnav {
-    background: #ffffff;
-    border-bottom: 1px solid #e4ece4;
-    height: 70px;
+    background-color: var(--color-forest-ink) !important;
+    border-bottom: 2px solid var(--color-sage-border) !important;
+    padding: 16px 0 !important;
+    z-index: 1000;
 }
 
 .nav-eco-links .nav-link {
+    font-family: var(--font-graphik);
+    font-size: 12px;
     font-weight: 500;
-    margin-left: 20px;
-    color: #2b2b2b !important;
-    transition: 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-paper-cream) !important; /* Off-white text on dark green nav */
+    padding: var(--spacing-8) var(--spacing-16) !important;
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
 .nav-eco-links .nav-link:hover {
-    color: #0f8d4c !important;
-    transform: translateY(-2px);
+    color: var(--color-meadow) !important; /* Meadows green highlight on hover */
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* PAGE CONTAINER */
+.nav-eco-links .nav-item.active .nav-link,
+.nav-eco-links .nav-link.active {
+    color: var(--color-forest-ink) !important;
+    background-color: var(--color-meadow) !important;
+}
+
+/* Main Container spacing */
 .page-container {
-    padding-top: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    flex: 1;
+    padding-top: var(--spacing-40);
+    padding-bottom: var(--spacing-64);
 }
 
-/* CARD STYLE */
+/* Kikin Cards - 20px radius with Sage Border */
 .card-custom {
-    background: white;
-    border-radius: 18px;
-    padding: 25px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    background-color: var(--color-white);
+    border-radius: 20px;
+    padding: var(--spacing-32);
+    border: 1px solid var(--color-sage-border);
+    box-shadow: 0 12px 40px rgba(10, 7, 27, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: var(--spacing-24);
 }
 
-/* FOOTER */
-.footer {
-    opacity: 0.65;
-    font-size: 15px;
+.card-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(10, 7, 27, 0.08);
+}
+
+/* Buttons - 10px Radius (NOT full-pill) with Uppercase Tracked labels */
+.btn {
+    border-radius: 10px !important;
+    font-family: var(--font-graphik) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.18em !important;
+    padding: 14px 28px !important;
+    transition: all 0.2s ease !important;
+    border-width: 1.5px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Filled Primary Action Button */
+.btn-success {
+    background-color: var(--color-meadow) !important; /* Meadow Green */
+    border-color: var(--color-meadow) !important;
+    color: var(--color-forest-ink) !important; /* Forest Ink text */
+    box-shadow: none !important;
+}
+
+.btn-success:hover, .btn-success:focus {
+    background-color: #45c43a !important; /* Deeper Meadow green on hover */
+    border-color: #45c43a !important;
+    color: var(--color-forest-ink) !important;
+}
+
+/* Ghost Navigation/Secondary Action Button */
+.btn-secondary {
+    background-color: transparent !important;
+    border: 1.5px solid var(--color-forest-ink) !important;
+    color: var(--color-forest-ink) !important;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(18, 35, 21, 0.06) !important;
+    color: var(--color-forest-ink) !important;
+}
+
+/* Destructive Actions */
+.btn-danger {
+    background-color: #c82014 !important;
+    border-color: #c82014 !important;
+    color: var(--color-white) !important;
+}
+
+.btn-danger:hover {
+    background-color: #b1180f !important;
+    border-color: #b1180f !important;
+}
+
+.btn-outline-success {
+    border: 1.5px solid var(--color-lichen) !important;
+    color: var(--color-forest-ink) !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-success:hover {
+    background-color: var(--color-lichen) !important;
+    color: var(--color-forest-ink) !important;
+}
+
+.btn-sm {
+    padding: 8px 18px !important;
+    font-size: 11px !important;
+}
+
+/* Inputs & Form Elements */
+.form-control, .form-select {
+    border-radius: 8px !important;
+    border: 1px solid var(--color-sage-border) !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    background-color: var(--color-white) !important;
+    color: var(--color-forest-ink) !important;
+    transition: all 0.2s ease !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-lichen) !important;
+    box-shadow: 0 0 0 3px rgba(119, 228, 110, 0.15) !important;
+    outline: none !important;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-forest-ink);
+    margin-bottom: var(--spacing-8);
+}
+
+/* Tables - Sage/Forest Ink style */
+.table {
+    border-collapse: separate !important;
+    border-spacing: 0 8px !important;
+    background: transparent !important;
+}
+
+.table thead th {
+    background-color: var(--color-forest-ink) !important; /* Forest Ink for table header */
+    color: var(--color-paper-cream) !important; /* Paper Cream header text */
+    font-family: var(--font-graphik) !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px !important;
+    border: none !important;
+    padding: 14px 18px !important;
+}
+
+.table thead th:first-child {
+    border-top-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+}
+
+.table thead th:last-child {
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+
+.table tbody tr {
+    background-color: var(--color-white) !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(10, 7, 27, 0.02);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.table tbody tr:hover {
+    transform: scale(1.005);
+    box-shadow: 0 4px 8px rgba(10, 7, 27, 0.04);
+}
+
+.table tbody td {
+    padding: 16px 18px !important;
+    border: none !important;
+    color: var(--color-charcoal) !important;
+    font-size: 15px !important;
+    vertical-align: middle !important;
+    border-top: 1px solid var(--color-frost) !important;
+    border-bottom: 1px solid var(--color-frost) !important;
+}
+
+.table tbody tr td:first-child {
+    border-left: 1px solid var(--color-frost) !important;
+    border-top-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+}
+
+.table tbody tr td:last-child {
+    border-right: 1px solid var(--color-frost) !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+
+/* Badges & Indicators */
+.badge {
+    padding: 6px 12px !important;
+    font-family: var(--font-graphik) !important;
+    font-weight: 500 !important;
+    border-radius: 20px !important;
+    font-size: 12px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.bg-success {
+    background-color: var(--color-meadow) !important;
+    color: var(--color-forest-ink) !important;
+}
+
+.bg-danger {
+    background-color: #c82014 !important;
+    color: var(--color-white) !important;
+}
+
+.bg-warning {
+    background-color: #dfc49d !important;
+    color: var(--color-forest-ink) !important;
+}
+
+/* Kikin Leaderboard Podium Cards */
+.leaderboard-card-1 {
+    background: var(--color-forest-ink) !important; /* Forest Ink base */
+    color: var(--color-paper-cream) !important;
+    border: 2px solid var(--color-meadow) !important; /* Meadow green border */
+    border-radius: 20px !important;
+    box-shadow: 0px 12px 30px rgba(85, 221, 74, 0.15) !important;
+}
+
+.leaderboard-card-1 h5 {
+    color: var(--color-meadow) !important;
+    font-family: var(--font-graphik);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+}
+
+.leaderboard-card-1 h3 {
+    color: var(--color-paper-cream) !important;
+    font-size: 32px;
+    margin-top: 8px;
+    letter-spacing: -0.5px;
+}
+
+.leaderboard-card-1 p {
+    color: var(--color-moss-gray) !important;
+    font-weight: 500;
+}
+
+.leaderboard-card-2 {
+    background: var(--color-white) !important;
+    color: var(--color-forest-ink) !important;
+    border: 2px solid var(--color-sage-border) !important;
+    border-radius: 20px !important;
+}
+
+.leaderboard-card-2 h5 {
+    color: var(--color-meadow) !important;
+    font-family: var(--font-graphik);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+}
+
+.leaderboard-card-2 h3 {
+    color: var(--color-forest-ink) !important;
+    font-size: 28px;
+}
+
+.leaderboard-card-3 {
+    background: var(--color-white) !important;
+    color: var(--color-forest-ink) !important;
+    border: 2px solid var(--color-sage-border) !important;
+    border-radius: 20px !important;
+}
+
+.leaderboard-card-3 h5 {
+    color: var(--color-lichen) !important;
+    font-family: var(--font-graphik);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+}
+
+.leaderboard-card-3 h3 {
+    color: var(--color-forest-ink) !important;
+    font-size: 28px;
+}
+
+/* Footer Section - Kikin forest bookend */
+.footer-eco {
+    background-color: var(--color-forest-ink);
+    color: var(--color-paper-cream);
+    padding: 50px 20px;
+    margin-top: auto;
+    font-size: 14px;
+    border-top: 3px solid var(--color-meadow);
+}
+
+.footer-eco p {
+    font-weight: 400;
+}
+
+.footer-eco .footer-sub {
+    font-size: 12px;
+    color: var(--color-moss-gray) !important;
+}
+
+/* Utility classes override */
+.text-success {
+    color: var(--color-meadow) !important;
+}
+.text-warning {
+    color: #dfc49d !important;
+}
+.text-primary {
+    color: var(--color-forest-ink) !important;
+}
+.text-muted {
+    color: var(--color-moss-gray) !important;
 }
