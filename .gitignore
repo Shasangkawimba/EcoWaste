@@ -1,0 +1,9 @@
+# Temporary and testing folders
+.playwright-mcp/
+tmp/
+*.log
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
