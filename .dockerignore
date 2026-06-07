@@ -1,0 +1,9 @@
+.git
+.gitignore
+.env
+.playwright-mcp/
+tmp/
+*.log
+docker-compose.yml
+Dockerfile
+.dockerignore
