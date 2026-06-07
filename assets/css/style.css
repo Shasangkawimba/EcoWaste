@@ -1,47 +1,39 @@
 /* ==========================================================================
-   DESIGN SYSTEM - KIKIN (VINTAGE PARK POSTER THEME)
+   DESIGN SYSTEM - ECOSIA LIGHT THEME
    ========================================================================== */
 
 :root {
     /* Color Palette */
-    --color-forest-ink: #122315;        /* Hero canvas, primary headings, nav bar, footer */
-    --color-meadow: #55dd4a;            /* Primary action fill, accent words, tags (grass-green) */
-    --color-sage-border: #566053;       /* Muted green-gray for dividers and secondary borders */
-    --color-lichen: #77e46e;            /* Outlined borders, secondary indicators */
-    --color-paper-cream: #f3ede4;       /* Warm paper canvas, replaces typical white background */
-    --color-charcoal: #333333;          /* Paragraph body text, general boundaries */
-    --color-slate: #141414;             /* Dark UI accents, icons */
-    --color-frost: #e5e7eb;             /* Soft secondary dividers */
-    --color-moss-gray: #999c91;         /* Low-emphasis captions, helper text */
-    --color-driftwood: #626d66;         /* Separators for elevated dark surfaces */
-    --color-white: #faf8f5;             /* Primary card backgrounds (warm cream, not pure white) */
+    --color-lime-canopy: #d7eb80;       /* Primary CTA background, vivid brand accent */
+    --color-ink-black: #333333;         /* Primary text, structure, footer */
+    --color-paper-white: #ffffff;       /* Default page background, table rows */
+    --color-warm-mist: #f8f8f6;         /* Secondary card backgrounds, panels */
+    --color-linen-cream: #f0f0eb;       /* Table headers, section bands */
+    --color-stone-gray: #6c6c6c;        /* Muted captions, secondary text */
+    --color-ash-border: #bebeb9;        /* Structural separators, form borders */
+    --color-silver-surface: #b6b6b6;    /* Muted states */
 
     /* Typography Scales */
-    --font-deacon: 'Bebas Neue', sans-serif;
-    --font-graphik: 'Inter', sans-serif;
+    --font-deacon: 'Space Grotesk', sans-serif; /* Display & headings */
+    --font-graphik: 'Inter', sans-serif;        /* Body, buttons, UI labels */
 
     /* Spacing Scales */
     --spacing-8: 8px;
-    --spacing-12: 12px;
     --spacing-16: 16px;
-    --spacing-20: 20px;
     --spacing-24: 24px;
     --spacing-32: 32px;
     --spacing-40: 40px;
-    --spacing-48: 48px;
-    --spacing-64: 64px;
     --spacing-80: 80px;
-    --spacing-100: 100px;
 }
 
 /* Global Styles */
 body {
-    background-color: var(--color-paper-cream);
-    color: var(--color-charcoal);
+    background-color: var(--color-paper-white);
+    color: var(--color-ink-black);
     font-family: var(--font-graphik);
     font-size: 16px;
-    line-height: 1.43;
-    letter-spacing: -0.16px;
+    line-height: 1.4;
+    letter-spacing: 0.007em;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -49,45 +41,40 @@ body {
     flex-direction: column;
 }
 
-/* Kikin Display Headings (Large) */
+/* Ecosia Display Headings (Space Grotesk) */
 h1, h2, .font-deacon {
     font-family: var(--font-deacon);
-    color: var(--color-forest-ink);
-    text-transform: uppercase;
+    color: var(--color-ink-black);
+    font-weight: 700;
     margin: 0 0 var(--spacing-16) 0;
-    line-height: 0.85;
-    letter-spacing: -1.2px;
+    line-height: 1.15;
 }
 
 h2 {
-    font-size: 58px;
-    letter-spacing: -1.51px;
-    color: var(--color-forest-ink);
+    font-size: 36px;
     margin-bottom: var(--spacing-24);
 }
 
-/* UI / Secondary Headings (Clean Graphik) */
+/* UI / Secondary Headings (Inter) */
 h3, h4, h5, h6, .font-graphik {
     font-family: var(--font-graphik);
-    color: var(--color-forest-ink);
+    color: var(--color-ink-black);
     margin: 0 0 var(--spacing-16) 0;
-    line-height: 1.2;
+    line-height: 1.3;
     font-weight: 600;
 }
 
 h3 {
-    font-size: 32px;
-    letter-spacing: -0.83px;
+    font-size: 24px;
 }
 
 h4 {
-    font-size: 24px;
-    letter-spacing: -0.96px;
+    font-size: 20px;
 }
 
 h5 {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 h6 {
@@ -95,50 +82,50 @@ h6 {
     font-weight: 500;
 }
 
-/* Brand logo as a Kikin-style Display badge */
+/* Brand logo - Ecosia style Wordmark */
 .brand-eco {
-    font-family: var(--font-deacon);
-    font-size: 32px;
-    letter-spacing: 0.5px;
-    color: var(--color-meadow) !important; /* Meadow green brand highlight */
+    font-family: var(--font-graphik);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: var(--color-ink-black) !important;
     text-transform: uppercase;
     text-decoration: none;
-    transition: transform 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 .brand-eco:hover {
-    transform: scale(1.03);
+    opacity: 0.8;
 }
 
-/* Top Navigation Bar - Forest Ink Background */
+/* Top Navigation Bar - Ecosia light-theme */
 .topnav {
-    background-color: var(--color-forest-ink) !important;
-    border-bottom: 2px solid var(--color-sage-border) !important;
-    padding: 16px 0 !important;
+    background-color: var(--color-paper-white) !important;
+    border-bottom: 1px solid var(--color-ash-border) !important;
+    padding: 12px 0 !important;
     z-index: 1000;
 }
 
 .nav-eco-links .nav-link {
     font-family: var(--font-graphik);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--color-paper-cream) !important; /* Off-white text on dark green nav */
+    color: var(--color-stone-gray) !important;
     padding: var(--spacing-8) var(--spacing-16) !important;
-    border-radius: 6px;
+    border-radius: 9999px; /* Pill-shaped active indicator hover state */
     transition: all 0.2s ease;
 }
 
 .nav-eco-links .nav-link:hover {
-    color: var(--color-meadow) !important; /* Meadows green highlight on hover */
-    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-ink-black) !important;
+    background-color: var(--color-warm-mist) !important;
 }
 
 .nav-eco-links .nav-item.active .nav-link,
 .nav-eco-links .nav-link.active {
-    color: var(--color-forest-ink) !important;
-    background-color: var(--color-meadow) !important;
+    color: var(--color-ink-black) !important;
+    background-color: var(--color-lime-canopy) !important;
+    font-weight: 600;
 }
 
 /* Main Container spacing */
@@ -152,136 +139,135 @@ h6 {
     padding-bottom: var(--spacing-64);
 }
 
-/* Kikin Cards - 20px radius with Sage Border */
+/* Ecosia Cards - 20px radius, Flat, Warm Mist surface */
 .card-custom {
-    background-color: var(--color-white);
+    background-color: var(--color-warm-mist);
     border-radius: 20px;
-    padding: var(--spacing-32);
-    border: 1px solid var(--color-sage-border);
-    box-shadow: 0 12px 40px rgba(10, 7, 27, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: var(--spacing-24);
+    border: 1px solid var(--color-ash-border);
+    box-shadow: none; /* Flat print aesthetic */
+    transition: background-color 0.2s ease;
     margin-bottom: var(--spacing-24);
 }
 
-.card-custom:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 48px rgba(10, 7, 27, 0.08);
-}
-
-/* Buttons - 10px Radius (NOT full-pill) with Uppercase Tracked labels */
+/* Buttons - 8px border radius to avoid looking weird, with comfortable spacing */
 .btn {
-    border-radius: 10px !important;
+    border-radius: 8px !important;
     font-family: var(--font-graphik) !important;
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.18em !important;
-    padding: 14px 28px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 10px 20px !important;
     transition: all 0.2s ease !important;
-    border-width: 1.5px !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    border: 1.5px solid transparent !important;
+    margin-right: 10px !important; /* Spacious gap between two adjacent buttons */
+    margin-bottom: 4px !important;
 }
 
-/* Filled Primary Action Button */
+.btn:last-child {
+    margin-right: 0 !important;
+}
+
+/* Filled Primary Action Button - Lime Canopy */
 .btn-success {
-    background-color: var(--color-meadow) !important; /* Meadow Green */
-    border-color: var(--color-meadow) !important;
-    color: var(--color-forest-ink) !important; /* Forest Ink text */
-    box-shadow: none !important;
+    background-color: var(--color-lime-canopy) !important;
+    border-color: var(--color-lime-canopy) !important;
+    color: var(--color-ink-black) !important;
 }
 
 .btn-success:hover, .btn-success:focus {
-    background-color: #45c43a !important; /* Deeper Meadow green on hover */
-    border-color: #45c43a !important;
-    color: var(--color-forest-ink) !important;
+    background-color: #c5da6a !important; /* Slightly deeper/vivid green */
+    border-color: #c5da6a !important;
+    color: var(--color-ink-black) !important;
 }
 
 /* Ghost Navigation/Secondary Action Button */
 .btn-secondary {
     background-color: transparent !important;
-    border: 1.5px solid var(--color-forest-ink) !important;
-    color: var(--color-forest-ink) !important;
+    border: 1.5px solid var(--color-ink-black) !important;
+    color: var(--color-ink-black) !important;
 }
 
 .btn-secondary:hover {
-    background-color: rgba(18, 35, 21, 0.06) !important;
-    color: var(--color-forest-ink) !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: var(--color-ink-black) !important;
 }
 
-/* Destructive Actions */
+/* Destructive Actions - Coral Red */
 .btn-danger {
-    background-color: #c82014 !important;
-    border-color: #c82014 !important;
-    color: var(--color-white) !important;
+    background-color: #e44b4b !important;
+    border-color: #e44b4b !important;
+    color: #ffffff !important;
 }
 
 .btn-danger:hover {
-    background-color: #b1180f !important;
-    border-color: #b1180f !important;
+    background-color: #c93b3b !important;
+    border-color: #c93b3b !important;
 }
 
 .btn-outline-success {
-    border: 1.5px solid var(--color-lichen) !important;
-    color: var(--color-forest-ink) !important;
+    border: 1.5px solid var(--color-ink-black) !important;
+    color: var(--color-ink-black) !important;
     background-color: transparent !important;
 }
 
 .btn-outline-success:hover {
-    background-color: var(--color-lichen) !important;
-    color: var(--color-forest-ink) !important;
+    background-color: var(--color-lime-canopy) !important;
+    border-color: var(--color-lime-canopy) !important;
+    color: var(--color-ink-black) !important;
 }
 
 .btn-sm {
-    padding: 8px 18px !important;
-    font-size: 11px !important;
+    padding: 6px 14px !important;
+    font-size: 12px !important;
 }
 
-/* Inputs & Form Elements */
+/* Inputs & Form Elements - Softer 24px pill shape */
 .form-control, .form-select {
-    border-radius: 8px !important;
-    border: 1px solid var(--color-sage-border) !important;
-    padding: 12px 16px !important;
+    border-radius: 24px !important;
+    border: 1px solid var(--color-ash-border) !important;
+    padding: 10px 18px !important;
     font-size: 15px !important;
-    background-color: var(--color-white) !important;
-    color: var(--color-forest-ink) !important;
+    background-color: var(--color-paper-white) !important;
+    color: var(--color-ink-black) !important;
     transition: all 0.2s ease !important;
 }
 
 .form-control:focus, .form-select:focus {
-    border-color: var(--color-lichen) !important;
-    box-shadow: 0 0 0 3px rgba(119, 228, 110, 0.15) !important;
+    border-color: var(--color-ink-black) !important;
+    box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1) !important;
     outline: none !important;
 }
 
 .form-label {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-forest-ink);
+    letter-spacing: 0.05em;
+    color: var(--color-ink-black);
     margin-bottom: var(--spacing-8);
 }
 
-/* Tables - Sage/Forest Ink style */
+/* Tables - Ecosia light editorial grid */
 .table {
     border-collapse: separate !important;
-    border-spacing: 0 8px !important;
+    border-spacing: 0 4px !important;
     background: transparent !important;
 }
 
 .table thead th {
-    background-color: var(--color-forest-ink) !important; /* Forest Ink for table header */
-    color: var(--color-paper-cream) !important; /* Paper Cream header text */
+    background-color: var(--color-linen-cream) !important;
+    color: var(--color-ink-black) !important;
     font-family: var(--font-graphik) !important;
-    font-weight: 500 !important;
+    font-weight: 700 !important;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.05em;
     font-size: 11px !important;
-    border: none !important;
-    padding: 14px 18px !important;
+    border: 1px solid var(--color-ash-border) !important;
+    padding: 12px 16px !important;
 }
 
 .table thead th:first-child {
@@ -295,35 +281,32 @@ h6 {
 }
 
 .table tbody tr {
-    background-color: var(--color-white) !important;
+    background-color: var(--color-paper-white) !important;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(10, 7, 27, 0.02);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: background-color 0.15s ease;
 }
 
 .table tbody tr:hover {
-    transform: scale(1.005);
-    box-shadow: 0 4px 8px rgba(10, 7, 27, 0.04);
+    background-color: var(--color-warm-mist) !important;
 }
 
 .table tbody td {
-    padding: 16px 18px !important;
-    border: none !important;
-    color: var(--color-charcoal) !important;
+    padding: 12px 16px !important;
+    color: var(--color-ink-black) !important;
     font-size: 15px !important;
     vertical-align: middle !important;
-    border-top: 1px solid var(--color-frost) !important;
-    border-bottom: 1px solid var(--color-frost) !important;
+    border-top: 1px solid var(--color-ash-border) !important;
+    border-bottom: 1px solid var(--color-ash-border) !important;
 }
 
 .table tbody tr td:first-child {
-    border-left: 1px solid var(--color-frost) !important;
+    border-left: 1px solid var(--color-ash-border) !important;
     border-top-left-radius: 8px !important;
     border-bottom-left-radius: 8px !important;
 }
 
 .table tbody tr td:last-child {
-    border-right: 1px solid var(--color-frost) !important;
+    border-right: 1px solid var(--color-ash-border) !important;
     border-top-right-radius: 8px !important;
     border-bottom-right-radius: 8px !important;
 }
@@ -332,126 +315,106 @@ h6 {
 .badge {
     padding: 6px 12px !important;
     font-family: var(--font-graphik) !important;
-    font-weight: 500 !important;
-    border-radius: 20px !important;
+    font-weight: 600 !important;
+    border-radius: 9999px !important; /* Chips are fully pill */
     font-size: 12px !important;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .bg-success {
-    background-color: var(--color-meadow) !important;
-    color: var(--color-forest-ink) !important;
+    background-color: var(--color-lime-canopy) !important;
+    color: var(--color-ink-black) !important;
 }
 
 .bg-danger {
-    background-color: #c82014 !important;
-    color: var(--color-white) !important;
+    background-color: #e44b4b !important;
+    color: #ffffff !important;
 }
 
 .bg-warning {
-    background-color: #dfc49d !important;
-    color: var(--color-forest-ink) !important;
+    background-color: var(--color-linen-cream) !important;
+    color: var(--color-ink-black) !important;
+    border: 1px solid var(--color-ash-border);
 }
 
-/* Kikin Leaderboard Podium Cards */
+/* Leaderboard Podium Cards */
 .leaderboard-card-1 {
-    background: var(--color-forest-ink) !important; /* Forest Ink base */
-    color: var(--color-paper-cream) !important;
-    border: 2px solid var(--color-meadow) !important; /* Meadow green border */
+    background: var(--color-lime-canopy) !important;
+    color: var(--color-ink-black) !important;
+    border: 2px solid var(--color-ink-black) !important;
     border-radius: 20px !important;
-    box-shadow: 0px 12px 30px rgba(85, 221, 74, 0.15) !important;
 }
 
 .leaderboard-card-1 h5 {
-    color: var(--color-meadow) !important;
-    font-family: var(--font-graphik);
+    color: var(--color-ink-black) !important;
     font-size: 13px;
-    letter-spacing: 0.18em;
-    font-weight: 500;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .leaderboard-card-1 h3 {
-    color: var(--color-paper-cream) !important;
+    color: var(--color-ink-black) !important;
     font-size: 32px;
     margin-top: 8px;
-    letter-spacing: -0.5px;
 }
 
 .leaderboard-card-1 p {
-    color: var(--color-moss-gray) !important;
-    font-weight: 500;
+    color: var(--color-stone-gray) !important;
+    font-weight: 600;
 }
 
-.leaderboard-card-2 {
-    background: var(--color-white) !important;
-    color: var(--color-forest-ink) !important;
-    border: 2px solid var(--color-sage-border) !important;
+.leaderboard-card-2, .leaderboard-card-3 {
+    background: var(--color-warm-mist) !important;
+    color: var(--color-ink-black) !important;
+    border: 1px solid var(--color-ash-border) !important;
     border-radius: 20px !important;
 }
 
-.leaderboard-card-2 h5 {
-    color: var(--color-meadow) !important;
-    font-family: var(--font-graphik);
+.leaderboard-card-2 h5, .leaderboard-card-3 h5 {
+    color: var(--color-stone-gray) !important;
     font-size: 13px;
-    letter-spacing: 0.18em;
-    font-weight: 500;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
-.leaderboard-card-2 h3 {
-    color: var(--color-forest-ink) !important;
+.leaderboard-card-2 h3, .leaderboard-card-3 h3 {
+    color: var(--color-ink-black) !important;
     font-size: 28px;
 }
 
-.leaderboard-card-3 {
-    background: var(--color-white) !important;
-    color: var(--color-forest-ink) !important;
-    border: 2px solid var(--color-sage-border) !important;
-    border-radius: 20px !important;
-}
-
-.leaderboard-card-3 h5 {
-    color: var(--color-lichen) !important;
-    font-family: var(--font-graphik);
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    font-weight: 500;
-}
-
-.leaderboard-card-3 h3 {
-    color: var(--color-forest-ink) !important;
-    font-size: 28px;
-}
-
-/* Footer Section - Kikin forest bookend */
+/* Footer Section */
 .footer-eco {
-    background-color: var(--color-forest-ink);
-    color: var(--color-paper-cream);
-    padding: 50px 20px;
+    background-color: var(--color-warm-mist);
+    color: var(--color-stone-gray);
+    padding: 40px 20px;
     margin-top: auto;
     font-size: 14px;
-    border-top: 3px solid var(--color-meadow);
+    border-top: 1px solid var(--color-ash-border);
 }
 
 .footer-eco p {
     font-weight: 400;
+    color: var(--color-ink-black);
 }
 
 .footer-eco .footer-sub {
     font-size: 12px;
-    color: var(--color-moss-gray) !important;
+    color: var(--color-stone-gray) !important;
 }
 
 /* Utility classes override */
 .text-success {
-    color: var(--color-meadow) !important;
+    color: #2d8c3a !important; /* Forest green */
 }
 .text-warning {
-    color: #dfc49d !important;
+    color: #d19219 !important; /* Golden/Brownish */
 }
 .text-primary {
-    color: var(--color-forest-ink) !important;
+    color: var(--color-ink-black) !important;
 }
 .text-muted {
-    color: var(--color-moss-gray) !important;
+    color: var(--color-stone-gray) !important;
 }

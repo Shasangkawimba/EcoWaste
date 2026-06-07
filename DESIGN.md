@@ -1,70 +1,58 @@
-# Kikin — Style Reference
-> Vintage park-poster on cream paper — a financial product wearing a patch jacket.
+# Ecosia — Style Reference
+> verdant search clearing — a white-canvas interface with a single lime-green accent and full-bleed leaf photography as the only chromatic noise.
 
-**Theme:** mixed
+**Theme:** light
 
-Kikin operates in the visual register of a vintage national-park poster that grew up and learned to do invoice financing. The system alternates between a deep forest-green hero and a warm cream content canvas, with one vivid grass-green (#55dd4a) acting as the single switch-on accent for every primary action. Headlines are set in Deacon, an ultra-condensed display sans pushed to absurd scale (up to 259px) with line-height compressed to 0.8 — type is treated as a landscape feature, not a label. Everything else is grounded: Graphik handles body, illustrations are limited-palette line-and-fill patches of mountains, trees and water, and circular illustrated badges float around content like enamel pins on a hiking jacket. The result is warm, environmental, slightly handmade, but with a serious financial product underneath — the green is a meadow, not a neon.
+Ecosia positions itself as a verdant search engine: a clean white-canvas interface where one vivid lime-green accent (#d7eb80) acts as the brand's single chromatic punctuation against an otherwise monochrome system. The hero is a full-bleed nature photograph — a leaf-canopied backdrop that reframes the search bar as a clearing — while every other section returns to white space, warm off-white cards, and Founders Grotesk headlines. Components lean soft and rounded: 20px card radii, pill-shaped buttons at 9999px, generous 40-48px section gaps, and a single translucent dark stat overlay floating above the hero photo. The overall rhythm is one confident page, one quiet page, one page with a colorful donut chart — the system uses color sparingly so the lime accent and the nature photography carry the emotional weight.
 
 ## Tokens — Colors
 
 | Name | Value | Token | Role |
 |------|-------|-------|------|
-| Forest Ink | `#122315` | `--color-forest-ink` | Hero canvas, primary heading text, nav bar surface, footer — the dominant dark that anchors every green-on-green moment |
-| Meadow | `#55dd4a` | `--color-meadow` | Primary action fill (GET FUNDING), accent headline words, tag fills — one switch-on green against both dark and cream surfaces |
-| Sage Border | `#566053` | `--color-sage-border` | Muted green-gray for secondary borders, dividers on cream, subhead accents — lets Meadow read as the only chromatic action |
-| Lichen | `#77e46e` | `--color-lichen` | Outlined/ghost action border, hover-state ring — a softer Meadow for non-filled interactive states |
-| Paper Cream | `#f3ede4` | `--color-paper-cream` | Main content canvas after the hero, card surface on dark hero, ghost-button fill — warm off-white that replaces typical SaaS white |
-| Charcoal | `#333333` | `--color-charcoal` | Body text on cream, hairline borders, image overlays — the workhorse neutral that keeps #122315 reserved for display moments |
-| Slate | `#141414` | `--color-slate` | Icon strokes, near-black text, very dark UI fills when Forest Ink would be too green |
-| Frost | `#e5e7eb` | `--color-frost` | Subtle dividers on cream, secondary card edges — quieter than Sage Border |
-| Moss Gray | `#999c91` | `--color-moss-gray` | Helper text, metadata, low-emphasis captions on cream |
-| Driftwood | `#626d66` | `--color-driftwood` | Dark borders and separators for elevated surfaces and inverted UI. Do not promote it to the primary CTA color |
-| River Blue | `#73d3eb` | `--color-river-blue` | Illustration accent for water and sky in the hero artwork and badge illustrations, small data-viz highlight |
-| Sun Yellow | `#ffed52` | `--color-sun-yellow` | Illustration accent for suns and warm callouts in the patch artwork, limited to decorative moments |
-| Deep Navy | `#0a071b` | `--color-deep-navy` | Illustration dark fills, badge backgrounds where Forest Ink would blend with the canvas |
+| Lime Canopy | `#d7eb80` | `--color-lime-canopy` | Primary action buttons, brand accent border, surface highlight — the single chromatic accent; warm yellow-green reads as young foliage and gives the CTA a nature-coded urgency without alarm |
+| Ink Black | `#333333` | `--color-ink-black` | Primary text, icon strokes, hairlines, structural borders, footer text — carries the entire interface's information hierarchy |
+| Paper White | `#ffffff` | `--color-paper-white` | Page background, card surfaces, button text on lime fills, search bar fill — the dominant canvas |
+| Warm Mist | `#f8f8f6` | `--color-warm-mist` | Secondary card surfaces, subtle elevated panels — a barely-warm off-white that softens the page from clinical white |
+| Linen Cream | `#f0f0eb` | `--color-linen-cream` | Tertiary card surfaces, section backgrounds — the warmest neutral, used as gentle banding between content blocks |
+| Stone Gray | `#6c6c6c` | `--color-stone-gray` | Secondary text, link borders, icon strokes, muted descriptions, footer secondary copy |
+| Ash Border | `#bebeb9` | `--color-ash-border` | Medium-contrast borders, control outlines, and structural separators. Do not promote it to the primary CTA color |
+| Silver Surface | `#b6b6b6` | `--color-silver-surface` | Occasional card surface or muted image treatment — the deepest achromatic before true shadow territory |
 
 ## Tokens — Typography
 
-### Deacon — Display and headline family. The signature choice: an ultra-condensed sans scaled from 58px subheads up to 259px hero lines, with line-height compressed to 0.8 so two-line headlines read as a single block. Weight 900 for hero and section openers, 700 for mid-page headings, 400 for badge labels and small caps callouts. This is the only voice allowed to be loud. · `--font-deacon`
-- **Substitute:** Oswald (700, 900), Antonio (700, 900), or Bebas Neue — any tall condensed sans with tight tracking
-- **Weights:** 400, 700, 900
-- **Sizes:** 14, 24, 32, 58, 72, 101, 137, 259
-- **Line height:** 0.80–0.90
-- **Letter spacing:** -2.85px at 259px, -2.06px at 137px, -2.12px at 101px, -1.87px at 72px, -0.83px at 32px, -0.55px at 24px
-- **OpenType features:** `"ss01" on if available`
-- **Role:** Display and headline family. The signature choice: an ultra-condensed sans scaled from 58px subheads up to 259px hero lines, with line-height compressed to 0.8 so two-line headlines read as a single block. Weight 900 for hero and section openers, 700 for mid-page headings, 400 for badge labels and small caps callouts. This is the only voice allowed to be loud.
+### Inter — Body text, UI controls, labels, captions, links, buttons, input fields, badges, list items, footer. Inter is the workhorse — neutral and highly legible at 14-16px body, with 600 for emphasis and 700 reserved for compact labels. Positive tracking of 0.006-0.007em gives body copy a slightly airier feel than Inter's default. · `--font-inter`
+- **Substitute:** Inter (Google Fonts) — directly available
+- **Weights:** 400, 500, 600, 700
+- **Sizes:** 12, 14, 16, 18, 20px
+- **Line height:** 1.40
+- **Letter spacing:** 0.006-0.007em (~0.1px at body size)
+- **OpenType features:** `"cv11", "ss01" on (Ecosia applies stylistic alternates and character variants to Inter for a more custom feel)`
+- **Role:** Body text, UI controls, labels, captions, links, buttons, input fields, badges, list items, footer. Inter is the workhorse — neutral and highly legible at 14-16px body, with 600 for emphasis and 700 reserved for compact labels. Positive tracking of 0.006-0.007em gives body copy a slightly airier feel than Inter's default.
 
-### Graphik — Body, UI, and small-text family. Weight 400 for paragraphs, captions, and nav; weight 500 for button labels, tag text, and emphasized subheads. The geometric humanist sans provides the quiet counterweight to Deacon's shouting display — every sentence is calm, every headline is compressed. Use at -0.4px tracking at 24px and above. · `--font-graphik`
-- **Substitute:** Inter (400, 500), Manrope (400, 500), or DM Sans (400, 500)
-- **Weights:** 400, 500
-- **Sizes:** 12, 14, 15, 16, 24, 32
-- **Line height:** 1.20–1.43
-- **Letter spacing:** -0.96px at 24px, -0.16px at 16px, 0.22px at 12px (positive tracking reserved for uppercase tags and eyebrow labels)
-- **Role:** Body, UI, and small-text family. Weight 400 for paragraphs, captions, and nav; weight 500 for button labels, tag text, and emphasized subheads. The geometric humanist sans provides the quiet counterweight to Deacon's shouting display — every sentence is calm, every headline is compressed. Use at -0.4px tracking at 24px and above.
-
-### Arial — System fallback and chart/dashboard data labels where a neutral numeric voice is needed; 40px reserved for stat readouts in the dashboard preview · `--font-arial`
-- **Substitute:** Helvetica, system-ui
-- **Weights:** 400
-- **Sizes:** 14, 16, 40
-- **Line height:** 1.25–1.43
-- **Role:** System fallback and chart/dashboard data labels where a neutral numeric voice is needed; 40px reserved for stat readouts in the dashboard preview
+### Founders Grotesk — Display headlines, section headings, hero text, large feature titles. Founders Grotesk is the signature typeface — used at 48-54px for hero and section titles with tight 1.10 line-height. The combination of geometric grotesk with Ecosia's lime accent and leaf photography creates the brand's editorial, magazine-meets-environment tone. No tracking adjustments — Founders handles its own optical spacing. · `--font-founders-grotesk`
+- **Substitute:** Inter Tight or Space Grotesk at matched weights, or General Sans
+- **Weights:** 400, 600, 700
+- **Sizes:** 16, 24, 36, 48, 54px
+- **Line height:** 1.10-1.30
+- **Role:** Display headlines, section headings, hero text, large feature titles. Founders Grotesk is the signature typeface — used at 48-54px for hero and section titles with tight 1.10 line-height. The combination of geometric grotesk with Ecosia's lime accent and leaf photography creates the brand's editorial, magazine-meets-environment tone. No tracking adjustments — Founders handles its own optical spacing.
 
 ### Type Scale
 
 | Role | Size | Line Height | Letter Spacing | Token |
 |------|------|-------------|----------------|-------|
-| caption | 12px | 1.4 | 0.22px | `--text-caption` |
-| body-sm | 14px | 1.43 | — | `--text-body-sm` |
-| body | 16px | 1.43 | -0.16px | `--text-body` |
-| subheading | 24px | 1.2 | -0.96px | `--text-subheading` |
-| heading-sm | 32px | 1.13 | -0.83px | `--text-heading-sm` |
-| heading | 58px | 0.9 | -1.51px | `--text-heading` |
-| heading-lg | 72px | 0.85 | -1.87px | `--text-heading-lg` |
-| display | 137px | 0.8 | -2.06px | `--text-display` |
+| caption | 12px | 1.4 | 0.084px | `--text-caption` |
+| body-sm | 14px | 1.4 | 0.098px | `--text-body-sm` |
+| body | 16px | 1.4 | 0.112px | `--text-body` |
+| subheading | 18px | 1.4 | — | `--text-subheading` |
+| heading-sm | 20px | 1.3 | — | `--text-heading-sm` |
+| heading | 24px | 1.3 | — | `--text-heading` |
+| heading-lg | 36px | 1.15 | — | `--text-heading-lg` |
+| display | 48px | 1.1 | — | `--text-display` |
+| display-lg | 54px | 1.1 | — | `--text-display-lg` |
 
 ## Tokens — Spacing & Shapes
 
-**Base unit:** 4px
+**Base unit:** 8px
 
 **Density:** comfortable
 
@@ -73,172 +61,161 @@ Kikin operates in the visual register of a vintage national-park poster that gre
 | Name | Value | Token |
 |------|-------|-------|
 | 8 | 8px | `--spacing-8` |
-| 12 | 12px | `--spacing-12` |
 | 16 | 16px | `--spacing-16` |
-| 20 | 20px | `--spacing-20` |
 | 24 | 24px | `--spacing-24` |
 | 32 | 32px | `--spacing-32` |
 | 40 | 40px | `--spacing-40` |
-| 48 | 48px | `--spacing-48` |
-| 64 | 64px | `--spacing-64` |
 | 80 | 80px | `--spacing-80` |
-| 100 | 100px | `--spacing-100` |
-| 120 | 120px | `--spacing-120` |
-| 164 | 164px | `--spacing-164` |
 
 ### Border Radius
 
 | Element | Value |
 |---------|-------|
 | cards | 20px |
-| badges | 20px |
-| buttons | 10px |
-| stickerBadges | 9999px |
+| chips | 9999px (pill) |
+| links | 4px |
+| inputs | 9999px (pill) |
+| buttons | 9999px (pill) |
+
+### Shadows
+
+| Name | Value | Token |
+|------|-------|-------|
+| xl | `rgba(0, 0, 0, 0.2) 0px 11px 33px 0px` | `--shadow-xl` |
 
 ### Layout
 
 - **Page max-width:** 1200px
-- **Section gap:** 96px
-- **Card padding:** 32px
+- **Section gap:** 80px
+- **Card padding:** 24px
 - **Element gap:** 16px
 
 ## Components
 
-### Filled Primary Button
-**Role:** The single GET FUNDING action across hero, mid-page, and final conversion moments
+### Pill CTA Button (Lime)
+**Role:** Primary action — the brand's signature button
 
-Meadow (#55dd4a) fill, Forest Ink (#122315) text, Graphik 500 at 14px, uppercase tracked +0.18em, 10px radius, 14px 28px padding. No border. Hovers deepen to #45c43a.
+Fully pill-shaped at 9999px radius. Background: #d7eb80 (Lime Canopy). Text: #333333 (Ink Black), Inter 14-16px weight 600. Padding: 11-15px vertical, 16-24px horizontal. No border. Single small icon optional at 16px in #333333 to the left of text. This is the only filled chromatic button in the entire system.
 
-### Ghost Navigation Button
-**Role:** Secondary nav action (LOG IN) sitting next to the primary CTA
+### Outlined Ghost Button
+**Role:** Secondary action
 
-Transparent fill on dark hero, 1px solid #f3ede4 (Paper Cream) border, Paper Cream text, Graphik 500 14px uppercase +0.18em, 10px radius, 10px 20px padding. Inverts to Forest Ink border on Paper Cream sections.
+Pill-shaped at 9999px radius. Transparent background, 1px border in #333333. Text: #333333, Inter 14-16px weight 500. Padding: 11-15px vertical, 19-24px horizontal. Used for lower-emphasis actions like 'See our reports'.
 
-### Circular Carousel Arrow
-**Role:** Testimonial and content carousel controls
+### Hero Search Bar
+**Role:** Primary interaction — the search input
 
-64px circle, 1px Lichen (#77e46e) border on Paper Cream, centered chevron in Lichen. No fill, no shadow — a quiet navigational pin.
+Massive pill input, 9999px radius, white background (#ffffff), sits centered over the green hero photo. Height ~56-64px. Left: 16px magnifying glass icon in #333333. Placeholder text 'Search the web...' in #6c6c6c, Inter 16px. Right side: a small outlined pill chip '+ AI Chat' with 1px #333333 border, 12px Inter weight 500.
 
-### Display Headline Block
-**Role:** Section openers and hero title — the loudest voice in the system
+### Nature Image Card
+**Role:** Value proposition or feature card
 
-Deacon 900 at 137px (hero) or 72px (section opener), line-height 0.80–0.85, tracking -2px or -1.87px, Forest Ink on cream or Paper Cream on dark. The second line of a hero can swap to Meadow to create a two-color sentence.
+Rounded rectangle at 20px radius, full-bleed nature photograph filling the card. Below the image: bold title in Inter 16-18px weight 700, #333333. Body description in Inter 14-16px weight 400, #6c6c6c, 1.40 line-height. No visible card border or shadow — the image itself provides containment. 4-column grid layout with 24-32px column gap.
 
-### Eyebrow Step Label
-**Role:** Small numeral or kicker above section openers (01, 02, 03)
+### Floating Stats Card
+**Role:** Live metric display over hero photo
 
-Graphik 400 14px, tracking +0.22em, uppercase, Meadow text. Sits 24px above the display headline with a 1px Sage Border underline.
+Dark translucent panel (background approx rgba(0,0,0,0.2-0.4) with blur), 20px radius, 24-32px padding. Contains a 20px icon (tree or euro) in #d7eb80 followed by a large number in white Inter 18-20px weight 700, and a small label in #d7eb80 or white Inter 12px. Shadow: rgba(0,0,0,0.2) 0px 11px 33px 0px lifts it above the photo. Displayed as a horizontal row of 2-3 stats.
 
-### Illustrated Patch Badge
-**Role:** Circular floating badges around the mission section — the system's signature decorative motif
+### Section Header (Eyebrow + Title)
+**Role:** Section introduction
 
-120–160px circle, limited-palette illustration (Deep Navy fill, Meadow/River Blue/Sun Yellow accents, Paper Cream linework), 2px Paper Cream outer ring, caption in Deacon 400 curving around the edge or Graphik 400 10px underneath. Float with 8–12px rotation for handmade feel.
+Centered stack. Eyebrow: uppercase Inter 12-14px weight 700, letter-spacing 0.1-0.15em, #6c6c6c. Title: Founders Grotesk 36-48px weight 600-700, #333333, line-height 1.10-1.15. 40-48px vertical gap between eyebrow and title.
 
-### Sticker Badge
-**Role:** Overlapping rectangular or circular callouts on testimonial photos (PRIORITY PLANET, WORK TOGETHER)
+### Split Content Block (Text + Image)
+**Role:** Long-form content with supporting visual
 
-Rectangular: Meadow fill, Forest Ink text, Graphik 500 12px uppercase, 0px radius (sharp corners), 4°–8° rotation. Circular variant: Deep Navy fill with Paper Cream type, 9999px radius. Must overlap the parent image by at least 20%.
+Two-column layout, roughly 50/50. Left column: eyebrow label (uppercase Inter 12px, #6c6c6c), heading (Founders Grotesk 24-36px weight 700, #333333), body paragraph (Inter 16px weight 400, #6c6c6c), optional outlined button. Right column: 20px-radius image filling its column, aspect ratio roughly 4:3 or 3:2.
 
-### Dashboard Preview Card
-**Role:** Product screenshot card in feature sections
+### Financial Donut Chart
+**Role:** Transparency visualization
 
-20px radius, Paper Cream surface, 1px Sage Border, 32px internal padding, subtle 0 12px 40px rgba(10,7,27,0.12) shadow. Contains Graphik data labels and a soft River Blue chart area.
+Colorful donut chart on neutral background. Segments use: #2d8c3a (deep green — largest segment), #e44b4b (coral red), #f5c542 (golden yellow), #3aa8e0 (sky blue), #f0a0a0 (soft pink). Center label shows a large currency amount in Inter 24-36px weight 700, #333333, with a small caption in #6c6c6c below. Sits in a light card (#f8f8f6) with 20px radius.
 
-### Testimonial Quote Card
-**Role:** Customer story layout with photo, quote, and attribution
+### Wordmark Logo
+**Role:** Brand identity
 
-Two-column on cream: 5:7 split, product photo left (full-bleed within column, no radius), quote right. Quote in Graphik 400 18px Charcoal, attribution in Deacon 400 14px Forest Ink with 1.2em letter-spacing. No card chrome — cream canvas is the surface.
+Simple wordmark 'ECOSIA' in Inter 18-20px weight 700, uppercase, letter-spacing 0.05em, #333333. Sits in the top-left corner of the page.
 
-### Floating Calculate Funding Chip
-**Role:** Persistent bottom-right conversion pin
+### Switch CTA (Top-Right Pill)
+**Role:** Persistent conversion trigger
 
-White fill, Forest Ink text, 20px radius, 12px 20px padding, Graphik 500 13px, with a small thumbs-up icon in Meadow. Lifts with 0 8px 24px rgba(10,7,27,0.18). Stays fixed across scroll.
+Lime Canopy (#d7eb80) pill button, 9999px radius, Inter 13-14px weight 600, #333333 text reading 'Switch to Ecosia — it's free'. Includes a small leading icon. Fixed in the top-right of every page. This is the brand's most repeated element.
 
-### Top Navigation Bar
-**Role:** Sticky header across all screens
+### Chip / Tag
+**Role:** Inline label or category marker
 
-Forest Ink fill on hero, Paper Cream on content sections. Kikin wordmark left in Graphik 500 18px, center nav links in Graphik 400 12px uppercase +0.18em, right cluster holds Ghost + Filled Primary buttons. 64px tall, no bottom border.
-
-### Numbered Feature Section
-**Role:** Mid-page explainer blocks (GROW WITH… 01, 02, 03)
-
-Single column on cream: 01 eyebrow in Meadow, Deacon 900 72px section title, Graphik 400 16px body, optional dashboard card below. 96px vertical breathing between blocks.
-
-### Hero Landscape Illustration
-**Role:** Full-bleed decorative scene anchoring the hero
-
-Mountains, pine forest, sunset, water, and a backpacker — built from limited palette (Deep Navy, Meadow, River Blue, Sun Yellow, Paper Cream linework) with no gradients and no photographic realism. Hand-drawn line quality, no perspective vanishing. Anchors the bottom 40% of the hero canvas.
+Small pill (9999px), 8-12px vertical padding, 12-16px horizontal. Light neutral background (#f0f0eb or #f8f8f6) or transparent with 1px #333333 border. Inter 12-14px weight 500, #333333.
 
 ## Do's and Don'ts
 
 ### Do
-- Use Deacon 900 between 58px and 259px for any display moment — its compressed geometry is the system, not a decoration
-- Reserve Meadow (#55dd4a) for exactly two roles: primary action fill and the second line of a two-color hero headline
-- Set line-height at 0.80–0.90 on every Deacon block — letting it breathe at 1.2 destroys the condensed silhouette
-- Default body canvas to Paper Cream (#f3ede4); pure white is a violation of the warm, paper-poster mood
-- Use the Patch Badge motif whenever illustrating an abstract concept (sustainability, impact, values) — it is the system's native decoration
-- Rotate sticker badges 4–8° and let them overlap images by 20%+ to keep the handmade feel
-- Keep illustration palette to Deep Navy + Meadow + River Blue + Sun Yellow + Paper Cream — adding a sixth hue breaks the poster cohesion
+- Use #d7eb80 Lime Canopy as the only chromatic accent in the entire interface — it is the brand's signature and loses all meaning if diluted across multiple accent colors.
+- Set all interactive buttons to 9999px pill radius — pill shapes are the system's defining component geometry, applied to buttons, search, and chips uniformly.
+- Set card and image radii to 20px — this is the only large radius in the system and gives surfaces a soft, non-clinical feel.
+- Set section gaps to 80px (10× base unit) to maintain the comfortable, breathable page rhythm — the system values whitespace over information density.
+- Pair Founders Grotesk 36-54px weight 600-700 with tight 1.10-1.15 line-height for all section titles and hero text.
+- Use Inter for everything below the display level — body, buttons, inputs, labels, badges, footer — and let the two typefaces create a clear editorial hierarchy.
+- Anchor the hero with a full-bleed nature photograph and overlay the floating stats card with its 33px-blur shadow — this is the page's emotional centerpiece.
 
 ### Don't
-- Don't introduce a second chromatic accent — Meadow is the only green, River Blue is illustration-only, Sun Yellow is decorative-only
-- Don't set Deacon at line-height above 0.95 or weight below 700 for headings — the quietness comes from the compressed line, not the weight
-- Don't use pure black (#000000) for text on cream — use Charcoal (#333333) or Forest Ink (#122315) to keep the warm tone
-- Don't apply shadows to patch badges or sticker badges — they should feel printed on the page, not floating
-- Don't use gradients — the system is flat poster-ink, not glass-morphism
-- Don't round cards at more than 20px or buttons at more than 10px — both radii are extracted from the source
-- Don't place a filled Meadow button on a Meadow or Lichen background — there is no chromatic action contrast in that pairing, use Ghost or a dark surface
+- Never use any color other than #d7eb80 as a fill for primary action buttons — secondary buttons must be outlined in #333333, not filled with a different chromatic.
+- Avoid square corners or radii below 10px on cards and images — the system commits to 20px softness.
+- Do not use Founders Grotesk for body text or UI labels — it is reserved for 24px+ display contexts where its editorial character can be felt.
+- Avoid adding gradients — the system is deliberately flat; all visual depth comes from photography, the single shadow token, and card surface stepping.
+- Do not stack more than one dark or translucent surface on the page — the dark stats overlay over the hero photo is the only shadow-driven elevation in the system.
+- Avoid dense information layouts — the comfortable spacing profile means 40-80px section gaps, not 16-24px.
+- Never use #000000 as a replacement for #333333 — the slightly lifted black preserves the warm, paper-like atmosphere of the canvas.
 
 ## Surfaces
 
 | Level | Name | Value | Purpose |
 |-------|------|-------|---------|
-| 0 | Hero Canvas | `#122315` | Dark forest ink for the hero, nav, and any full-bleed dark band |
-| 1 | Content Paper | `#f3ede4` | Warm cream for all body content, replacing typical SaaS white |
-| 2 | Ink Card | `#0a071b` | Dark surface for testimonial quote cards and badge sticker backgrounds |
-| 3 | Sage Tint | `#566053` | Muted surface for secondary cards sitting on cream where a pure white would feel cold |
-
-## Elevation
-
-- **Floating action chip (Calculate Your Funding):** `0 8px 24px rgba(10, 7, 27, 0.18)`
-- **Dashboard preview card:** `0 12px 40px rgba(10, 7, 27, 0.12)`
-- **Testimonial card:** `none — relies on cream canvas contrast, not shadow`
+| 1 | Page Canvas | `#ffffff` | Default page background and dominant content surface |
+| 2 | Soft Card | `#f8f8f6` | Elevated cards, feature panels with subtle warmth |
+| 3 | Warm Band | `#f0f0eb` | Section banding, tertiary card surfaces, gentle visual separation |
+| 4 | Hero Photo + Stat Overlay | `#d7eb80 / rgba(0,0,0,0.2)` | Full-bleed leaf photography with a floating dark translucent stat card on top |
 
 ## Imagery
 
-Illustrations dominate over photography. The hero and all section accents use hand-drawn limited-palette line-and-fill scenes (mountains, forests, sunsets, rivers, backpackers, a hiker raising a fist on a summit) built from Deep Navy, Meadow, River Blue, Sun Yellow, and Paper Cream linework — no gradients, no perspective vanishing points, slightly naïve in proportion. Photography appears only in the testimonial section as tight, high-contrast product crops (a blue water bottle mid-splash) that pop against the cream canvas. Decorative circular 'patch' badges — enamel-pin style illustrations of trees, logs, suns, and globes — float around hero-adjacent sections at slight rotations. The system never uses lifestyle photography, never uses stock imagery, and never uses duotone treatments.
+Photography is the system's primary visual content and emotional driver. All photography is nature-focused: dense leaf canopies, forest clearings, hands holding phones, wildflowers, solar panel arrays, aerial landscape shots of reforestation sites. Images are tightly cropped, high-resolution, and full-color — no duotone treatment or desaturation. Card images are 20px-radius contained, hero photography is full-bleed edge-to-edge. A single dark translucent overlay (rgba(0,0,0,0.2-0.4) with 11px/33px shadow) is used to lift the stats card above the hero photo. The financial transparency section introduces a colorful infographic (donut chart) using the brand's nature-coded palette (green, coral, yellow, blue, pink) — this is the only non-photographic visual. No illustrations, no 3D renders, no abstract graphics. Icons are simple line/glyph style in #333333, 16-20px.
 
 ## Layout
 
-Hero is full-bleed dark Forest Ink with the Kikin wordmark top-left, centered nav, and centered action cluster top-right. Headline sits centered above the hero, then a full-width illustrated landscape anchors the bottom 40%. The rest of the page alternates between Paper Cream content bands and occasional Forest Ink feature bands. Content is max-width 1200px centered, with two-column splits (text-left/image-right or vice versa) and 96px vertical breathing between sections. Numbered feature blocks stack single-column on cream. The Calculate Funding chip floats fixed bottom-right across the entire page, riding over every section.
+The page model is max-width contained (~1200px) for content sections, but the hero breaks to full-bleed. Section rhythm alternates between full-bleed nature photography (hero) and white-canvas content blocks. Content sections follow three patterns: (1) centered stack with eyebrow + heading + 4-column card grid, (2) two-column split with text-left/image-right, (3) two-column split with visualization-left/text-right. Vertical spacing between sections is generous at 80px. The hero is centered — headline, search bar, and stats all stack vertically in the center of a full-viewport green photograph. Navigation is minimal: wordmark top-left, single lime CTA top-right, no hamburger menu, no sidebar. The page is scroll-driven with a subtle scroll-down chevron at the bottom of the hero inviting exploration.
 
 ## Agent Prompt Guide
 
-QUICK COLOR REFERENCE
-- text: #122315 (Forest Ink) on cream, #f3ede4 (Paper Cream) on dark
-- background: #f3ede4 (Paper Cream) for content, #122315 (Forest Ink) for hero
-- border: #566053 (Sage Border) on cream, #f3ede4 on dark
-- accent: #55dd4a (Meadow) — display words and eyebrow labels only
-- primary action: #55dd4a (filled action)
-- illustration accents: #73d3eb River Blue, #ffed52 Sun Yellow, #0a071b Deep Navy
+## Quick Color Reference
+- text: #333333
+- background: #ffffff
+- card surface: #f8f8f6 or #f0f0eb
+- border / hairline: #333333 or #bebeb9
+- accent: #d7eb80
+- primary action: #d7eb80 (filled action)
 
-EXAMPLE COMPONENT PROMPTS
+## Example Component Prompts
+1. **Hero Search Section**: Full-bleed background image of green leaves. Centered Founders Grotesk 54px weight 700, #ffffff text 'Search. Find. Change the World.' Below: a white pill search bar (#ffffff, 9999px radius, 64px height) with a 16px magnifying-glass icon in #333333 on the left, placeholder 'Search the web...' in #6c6c6c Inter 16px, and a small outlined chip '+ AI Chat' (1px #333333 border, pill) on the right. Below the search: a dark translucent stats card (rgba(0,0,0,0.4), 20px radius, shadow rgba(0,0,0,0.2) 0px 11px 33px 0px) with two stats — '250,619,082 trees planted by Ecosia' and '€101,096,095 dedicated to climate action', each with a 20px icon in #d7eb80.
 
-1. Create a Primary Action Button: #55dd4a background, #141414 text, 9999px radius, compact pill padding. Use this filled treatment for the main CTA.
+2. **Value Proposition Card Grid**: White background section. Centered eyebrow 'WHY CHOOSE ECOSIA?' in Inter 12px weight 700, uppercase, letter-spacing 0.1em, #6c6c6c. Heading 'What we stand for' in Founders Grotesk 48px weight 700, #333333. Below: 4-column grid with 32px column gap, each cell containing a 20px-radius full-bleed nature photo, then a title in Inter 16px weight 700 #333333, and a description in Inter 14px weight 400 #6c6c6c.
 
+3. **Financial Transparency Split**: Two-column layout. Left: a donut chart on a #f8f8f6 card (20px radius, 40px padding) with green/coral/yellow/blue/pink segments. Center label: '€4,124,634' in Inter 36px weight 700 #333333, with 'total income this month' in Inter 14px #6c6c6c. Right: eyebrow 'MONTHLY FINANCIAL REPORT' Inter 12px weight 700 #6c6c6c, heading 'We're fully transparent' in Founders Grotesk 36px weight 700 #333333, body paragraph Inter 16px #6c6c6c, and an outlined pill button 'See our reports' (1px #333333 border, 9999px radius, Inter 14px weight 500).
 
-3. Numbered feature block on cream. Eyebrow '01' in Graphik 400 14px #55dd4a with +0.22em tracking. Section title in Deacon 900 72px #122315, line-height 0.85. Body in Graphik 400 16px #333333, max-width 640px. Dashboard preview card to the right: 20px radius, #f3ede4 surface, 1px #566053 border, 32px padding, soft 0 12px 40px rgba(10,7,27,0.12) shadow.
+4. **Switch CTA (Header)**: Top-right pill button. Background #d7eb80, 9999px radius, padding 11px 19px. Text 'Switch to Ecosia — it's free' in Inter 14px weight 600 #333333, with a 14px leaf icon to the left.
 
-4. Testimonial block on cream. Two-column 5:7 split. Left column: product photo of a blue bottle on a water splash, full-bleed within the column, no radius. Right column: section title in Deacon 900 58px #122315, quote in Graphik 400 18px #333333, attribution in Deacon 400 14px #122315 with 1.2em tracking. Sticker Badge overlapping the bottom-left of the photo: 4° rotated rectangle, #55dd4a fill, #122315 text, 0px radius. Circular carousel arrows (64px, 1px #77e46e border, transparent fill) below the attribution.
+5. **Section Header**: Centered stack. Eyebrow 'OUR TREE PLANTING APPROACH' Inter 12px weight 700 uppercase, letter-spacing 0.1em, #6c6c6c. Heading 'We restore and protect biodiversity hotspots' in Founders Grotesk 36px weight 700, line-height 1.15, #333333. 40px gap between eyebrow and heading.
 
-5. Floating Calculate Funding chip. Fixed bottom-right, 24px from edges. White fill, #122315 text, Graphik 500 13px, 20px radius, 12px 20px padding, thumbs-up icon in #55dd4a to the left of the text. Shadow: 0 8px 24px rgba(10,7,27,0.18).
+## Elevation Philosophy
+
+Ecosia avoids stacking multiple elevated surfaces. The system has exactly one shadow token (rgba(0,0,0,0.2) 0px 11px 33px 0px), used solely on the dark stats card floating over the hero photograph. All other depth is communicated through surface color stepping (white → #f8f8f6 → #f0f0eb) and the 20px card radius. There are no hover lift effects, no modal shadows, no dropdown shadows. This restraint keeps the interface feeling like printed editorial pages rather than a typical SaaS UI.
 
 ## Similar Brands
 
-- **Allbirds** — Same earth-tone palette and environmental brand storytelling with cream-and-forest coloring, but Kikin keeps the condensed-display poster energy
-- **Patagonia** — Shared nature-illustration visual language and warm cream content surfaces paired with a single bold accent
-- **Watershed** — Climate-fintech crossover with the same dark-to-cream section rhythm and single bright green for primary action
-- **Cuvva** — Uses an ultra-condensed display sans at massive scale over warm cream content — the same 'shout headlines, calm body' typographic duet
+- **DuckDuckGo** — Same privacy-focused search engine category with a single dominant accent color and clean white-canvas interface.
+- **Evernote** — Similar soft-rounded card aesthetic with 20px radii and a green-leaning brand palette for nature/productivity crossover.
+- **Headspace** — Same warm off-white card surfaces (#f8f8f6 family), generous 80px section gaps, and photography-driven hero sections.
+- **Notion** — Same near-monochrome interface with one soft accent, warm off-white surfaces, and pill-shaped interactive controls.
+- **Allbirds** — Same nature-brand visual language pairing full-bleed environmental photography with a quiet white-canvas product page.
 
 ## Quick Start
 
@@ -247,93 +224,85 @@ EXAMPLE COMPONENT PROMPTS
 ```css
 :root {
   /* Colors */
-  --color-forest-ink: #122315;
-  --color-meadow: #55dd4a;
-  --color-sage-border: #566053;
-  --color-lichen: #77e46e;
-  --color-paper-cream: #f3ede4;
-  --color-charcoal: #333333;
-  --color-slate: #141414;
-  --color-frost: #e5e7eb;
-  --color-moss-gray: #999c91;
-  --color-driftwood: #626d66;
-  --color-river-blue: #73d3eb;
-  --color-sun-yellow: #ffed52;
-  --color-deep-navy: #0a071b;
+  --color-lime-canopy: #d7eb80;
+  --color-ink-black: #333333;
+  --color-paper-white: #ffffff;
+  --color-warm-mist: #f8f8f6;
+  --color-linen-cream: #f0f0eb;
+  --color-stone-gray: #6c6c6c;
+  --color-ash-border: #bebeb9;
+  --color-silver-surface: #b6b6b6;
 
   /* Typography — Font Families */
-  --font-deacon: 'Deacon', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-graphik: 'Graphik', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-arial: 'Arial', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-founders-grotesk: 'Founders Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
   --text-caption: 12px;
   --leading-caption: 1.4;
-  --tracking-caption: 0.22px;
+  --tracking-caption: 0.084px;
   --text-body-sm: 14px;
-  --leading-body-sm: 1.43;
+  --leading-body-sm: 1.4;
+  --tracking-body-sm: 0.098px;
   --text-body: 16px;
-  --leading-body: 1.43;
-  --tracking-body: -0.16px;
-  --text-subheading: 24px;
-  --leading-subheading: 1.2;
-  --tracking-subheading: -0.96px;
-  --text-heading-sm: 32px;
-  --leading-heading-sm: 1.13;
-  --tracking-heading-sm: -0.83px;
-  --text-heading: 58px;
-  --leading-heading: 0.9;
-  --tracking-heading: -1.51px;
-  --text-heading-lg: 72px;
-  --leading-heading-lg: 0.85;
-  --tracking-heading-lg: -1.87px;
-  --text-display: 137px;
-  --leading-display: 0.8;
-  --tracking-display: -2.06px;
+  --leading-body: 1.4;
+  --tracking-body: 0.112px;
+  --text-subheading: 18px;
+  --leading-subheading: 1.4;
+  --text-heading-sm: 20px;
+  --leading-heading-sm: 1.3;
+  --text-heading: 24px;
+  --leading-heading: 1.3;
+  --text-heading-lg: 36px;
+  --leading-heading-lg: 1.15;
+  --text-display: 48px;
+  --leading-display: 1.1;
+  --text-display-lg: 54px;
+  --leading-display-lg: 1.1;
 
   /* Typography — Weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-black: 900;
 
   /* Spacing */
-  --spacing-unit: 4px;
+  --spacing-unit: 8px;
   --spacing-8: 8px;
-  --spacing-12: 12px;
   --spacing-16: 16px;
-  --spacing-20: 20px;
   --spacing-24: 24px;
   --spacing-32: 32px;
   --spacing-40: 40px;
-  --spacing-48: 48px;
-  --spacing-64: 64px;
   --spacing-80: 80px;
-  --spacing-100: 100px;
-  --spacing-120: 120px;
-  --spacing-164: 164px;
 
   /* Layout */
   --page-max-width: 1200px;
-  --section-gap: 96px;
-  --card-padding: 32px;
+  --section-gap: 80px;
+  --card-padding: 24px;
   --element-gap: 16px;
 
   /* Border Radius */
+  --radius-md: 4px;
   --radius-lg: 10px;
   --radius-2xl: 20px;
+  --radius-3xl: 40px;
+  --radius-full: 9999px;
 
   /* Named Radii */
   --radius-cards: 20px;
-  --radius-badges: 20px;
-  --radius-buttons: 10px;
-  --radius-stickerbadges: 9999px;
+  --radius-chips: 9999px (pill);
+  --radius-links: 4px;
+  --radius-inputs: 9999px (pill);
+  --radius-buttons: 9999px (pill);
+
+  /* Shadows */
+  --shadow-xl: rgba(0, 0, 0, 0.2) 0px 11px 33px 0px;
 
   /* Surfaces */
-  --surface-hero-canvas: #122315;
-  --surface-content-paper: #f3ede4;
-  --surface-ink-card: #0a071b;
-  --surface-sage-tint: #566053;
+  --surface-page-canvas: #ffffff;
+  --surface-soft-card: #f8f8f6;
+  --surface-warm-band: #f0f0eb;
+  --surface-hero-photo-stat-overlay: #d7eb80 / rgba(0,0,0,0.2);
 }
 ```
 
@@ -342,67 +311,58 @@ EXAMPLE COMPONENT PROMPTS
 ```css
 @theme {
   /* Colors */
-  --color-forest-ink: #122315;
-  --color-meadow: #55dd4a;
-  --color-sage-border: #566053;
-  --color-lichen: #77e46e;
-  --color-paper-cream: #f3ede4;
-  --color-charcoal: #333333;
-  --color-slate: #141414;
-  --color-frost: #e5e7eb;
-  --color-moss-gray: #999c91;
-  --color-driftwood: #626d66;
-  --color-river-blue: #73d3eb;
-  --color-sun-yellow: #ffed52;
-  --color-deep-navy: #0a071b;
+  --color-lime-canopy: #d7eb80;
+  --color-ink-black: #333333;
+  --color-paper-white: #ffffff;
+  --color-warm-mist: #f8f8f6;
+  --color-linen-cream: #f0f0eb;
+  --color-stone-gray: #6c6c6c;
+  --color-ash-border: #bebeb9;
+  --color-silver-surface: #b6b6b6;
 
   /* Typography */
-  --font-deacon: 'Deacon', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-graphik: 'Graphik', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-arial: 'Arial', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-founders-grotesk: 'Founders Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
   --text-caption: 12px;
   --leading-caption: 1.4;
-  --tracking-caption: 0.22px;
+  --tracking-caption: 0.084px;
   --text-body-sm: 14px;
-  --leading-body-sm: 1.43;
+  --leading-body-sm: 1.4;
+  --tracking-body-sm: 0.098px;
   --text-body: 16px;
-  --leading-body: 1.43;
-  --tracking-body: -0.16px;
-  --text-subheading: 24px;
-  --leading-subheading: 1.2;
-  --tracking-subheading: -0.96px;
-  --text-heading-sm: 32px;
-  --leading-heading-sm: 1.13;
-  --tracking-heading-sm: -0.83px;
-  --text-heading: 58px;
-  --leading-heading: 0.9;
-  --tracking-heading: -1.51px;
-  --text-heading-lg: 72px;
-  --leading-heading-lg: 0.85;
-  --tracking-heading-lg: -1.87px;
-  --text-display: 137px;
-  --leading-display: 0.8;
-  --tracking-display: -2.06px;
+  --leading-body: 1.4;
+  --tracking-body: 0.112px;
+  --text-subheading: 18px;
+  --leading-subheading: 1.4;
+  --text-heading-sm: 20px;
+  --leading-heading-sm: 1.3;
+  --text-heading: 24px;
+  --leading-heading: 1.3;
+  --text-heading-lg: 36px;
+  --leading-heading-lg: 1.15;
+  --text-display: 48px;
+  --leading-display: 1.1;
+  --text-display-lg: 54px;
+  --leading-display-lg: 1.1;
 
   /* Spacing */
   --spacing-8: 8px;
-  --spacing-12: 12px;
   --spacing-16: 16px;
-  --spacing-20: 20px;
   --spacing-24: 24px;
   --spacing-32: 32px;
   --spacing-40: 40px;
-  --spacing-48: 48px;
-  --spacing-64: 64px;
   --spacing-80: 80px;
-  --spacing-100: 100px;
-  --spacing-120: 120px;
-  --spacing-164: 164px;
 
   /* Border Radius */
+  --radius-md: 4px;
   --radius-lg: 10px;
   --radius-2xl: 20px;
+  --radius-3xl: 40px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xl: rgba(0, 0, 0, 0.2) 0px 11px 33px 0px;
 }
 ```

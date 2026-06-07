@@ -101,15 +101,15 @@ new Chart(ctx, {
         datasets: [{
             label: 'Kg Sampah',
             data: <?= json_encode($values) ?>,
-            borderColor: '#73d3eb',
-            backgroundColor: 'rgba(115, 211, 235, 0.15)',
+            borderColor: '#2d8c3a',
+            backgroundColor: 'rgba(215, 235, 128, 0.15)',
             borderWidth: 3,
             fill: true,
             tension: 0.4,
-            pointBackgroundColor: '#122315',
-            pointBorderColor: '#73d3eb',
-            pointHoverBackgroundColor: '#55dd4a',
-            pointHoverBorderColor: '#122315',
+            pointBackgroundColor: '#333333',
+            pointBorderColor: '#d7eb80',
+            pointHoverBackgroundColor: '#d7eb80',
+            pointHoverBorderColor: '#333333',
             pointRadius: 5,
             pointHoverRadius: 7
         }]
@@ -124,13 +124,13 @@ new Chart(ctx, {
                         size: 13,
                         weight: 500
                     },
-                    color: '#122315'
+                    color: '#333333'
                 }
             },
             tooltip: {
-                backgroundColor: '#122315',
-                titleColor: '#f3ede4',
-                bodyColor: '#f3ede4',
+                backgroundColor: '#333333',
+                titleColor: '#ffffff',
+                bodyColor: '#ffffff',
                 bodyFont: {
                     family: "'Inter', sans-serif"
                 },
@@ -143,7 +143,7 @@ new Chart(ctx, {
         scales: {
             x: {
                 grid: {
-                    color: '#e5e7eb'
+                    color: '#f0f0eb'
                 },
                 ticks: {
                     font: {
@@ -154,7 +154,7 @@ new Chart(ctx, {
             },
             y: {
                 grid: {
-                    color: '#e5e7eb'
+                    color: '#f0f0eb'
                 },
                 ticks: {
                     font: {
